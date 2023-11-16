@@ -42,6 +42,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
 void execute_opcode(char *opcode, unsigned int line_number, stack_t **stack, char *arg);
 int main(int argc, char *argv[]);
+void pint(stack_t **stack, unsigned int line_number);
 
 
 #endif /*MONTY_H*/

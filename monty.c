@@ -75,6 +75,7 @@ void execute_opcode(char *opcode, unsigned int line_number,
 	int i;
 	instruction_t instructions[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
