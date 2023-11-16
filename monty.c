@@ -1,7 +1,20 @@
 #include "monty.h"
+/**
+ * main - entry point
+ * @argc: argument counter
+ * @argv: argument vector
+ * Return: success || failure
+ */
 
-/* Function prototypes */
-void execute_opcode(char *opcode, unsigned int line_number, stack_t **stack, char *arg);
+/**
+ * execute_opcode - function that executes an opcode
+ * @opcode: The opcode to execute.
+ * @line_number: The line number where the opcode is found.
+ * @stack: The stack to perform operations on.
+ * @arg: argument
+ */
+void execute_opcode(char *opcode, unsigned int line_number,
+stack_t **stack, char *arg);
 
 int main(int argc, char *argv[])
 {
@@ -42,9 +55,15 @@ int main(int argc, char *argv[])
 	fclose(file);
 	free_stack(&stack);
 
-	return 0;
+	return (0);
 }
-
+/**
+ * execute_opcode - function that executes an opcode
+ * @opcode: The opcode to execute.
+ * @line_number: The line number where the opcode is found.
+ * @stack: The stack to perform operations on.
+ * @arg: argument
+ */
 void execute_opcode(char *opcode, unsigned int line_number, stack_t **stack, char *arg)
 {
 	int i;
