@@ -40,10 +40,13 @@ typedef struct instruction_s
 void push(stack_t **stack, unsigned int line_number, const char *arg);
 void pall(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
-void execute_opcode(char *opcode, unsigned int line_number, stack_t **stack, char *arg);
+void execute_opcode(char *opcode, unsigned int line_number,
+stack_t **stack, char *arg);
 int main(int argc, char *argv[]);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
-
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 #endif /*MONTY_H*/
