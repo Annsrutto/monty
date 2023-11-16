@@ -1,21 +1,26 @@
 #include "monty.h"
 /**
- * main - entry point
- * @argc: argument counter
- * @argv: argument vector
- * Return: success || failure
- */
-
-/**
  * execute_opcode - function that executes an opcode
  * @opcode: The opcode to execute.
  * @line_number: The line number where the opcode is found.
  * @stack: The stack to perform operations on.
- * @arg: argument
+ * @arg: argument for the opcode
+ *
+ * Description: function takes an opcode and executes the corresponding
+ * function. It handles different opcodes, like 'push' and 'pall'.
  */
 void execute_opcode(char *opcode, unsigned int line_number,
-stack_t **stack, char *arg);
+		stack_t **stack, char *arg);
 
+/**
+ * main - Entry point of the Monty interpreter
+ * @argc: The number of command line arguments
+ * @argv: Array of command line arguments
+ *
+ * Return: Exit status
+ * Description: The main function opens and reads a Monty bytecodes file,
+ * processes each line, and executes the corresponding opcodes.
+ */
 int main(int argc, char *argv[])
 {
 	FILE *file;
@@ -64,7 +69,8 @@ int main(int argc, char *argv[])
  * @stack: The stack to perform operations on.
  * @arg: argument
  */
-void execute_opcode(char *opcode, unsigned int line_number, stack_t **stack, char *arg)
+void execute_opcode(char *opcode, unsigned int line_number,
+		stack_t **stack, char *arg)
 {
 	int i;
 	instruction_t instructions[] = {

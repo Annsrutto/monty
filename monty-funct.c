@@ -11,7 +11,14 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	int num;
 	stack_t *new_node;
 
-	if (arg == NULL || ((num = atoi(arg)) == 0 && strcmp(arg, "0") != 0))
+	if (arg == NULL)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	num = atoi(arg);
+	if (num == 0 && strcmp(arg, "0") != 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
