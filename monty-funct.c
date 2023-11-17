@@ -33,6 +33,7 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	*stack = new_node;
 }
 
+
 /**
  * is_numeric - Checks if a string represents a numeric value.
  * @str: The string to check.
