@@ -45,7 +45,7 @@ int is_numeric(const char *str)
 
 	while (*str != '\0')
 	{
-		if (!isdigit(*str))
+		if (!isdigit((unsigned char)*str))
 			return (0);
 		str++;
 	}
