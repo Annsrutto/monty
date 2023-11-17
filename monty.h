@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 
 /**
@@ -38,6 +39,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void push(stack_t **stack, unsigned int line_number, const char *arg);
+int is_numeric(const char *str);
 void pall(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
 void execute_opcode(char *opcode, unsigned int line_number,

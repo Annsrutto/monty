@@ -11,18 +11,13 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	int num;
 	stack_t *new_node;
 
-	if (arg == NULL)
+	if (arg == NULL || *arg == '\0' || !is_numeric(arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	num = atoi(arg);
-	if (num == 0 && strcmp(arg, "0") != 0)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
@@ -36,6 +31,26 @@ void push(stack_t **stack, unsigned int line_number, const char *arg)
 	if (*stack != NULL)
 		(*stack)->prev = new_node;
 	*stack = new_node;
+}
+
+/**
+ * is_numeric - Checks if a string represents a numeric value.
+ * @str: The string to check.
+ * Return: 1 if numeric, 0 otherwise.
+ */
+int is_numeric(const char *str)
+{
+	if (str == NULL || *str == '\0')
+		return (0);
+
+	while (*str != '\0')
+	{
+		if (!isdigit(*str))
+			return (0);
+		str++;
+	}
+
+	return (1);
 }
 
 /**
