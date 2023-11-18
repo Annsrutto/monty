@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  * div - Divides the second top element of the stack by the top element.
  * @stack: Double pointer to the top of the stack.
