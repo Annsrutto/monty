@@ -83,7 +83,7 @@ void execute_opcode(char *opcode, unsigned int line_number,
 		{"sub", sub},
         {"div", div_stack},
 		{"mod", mod},
-		{"mul,", mul},
+		{"mul", mul},
 		{NULL, NULL}
 	};
 
