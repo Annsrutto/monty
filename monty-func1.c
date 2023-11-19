@@ -82,7 +82,7 @@ void sub(stack_t **stack, unsigned int line_number)
 /**
  * rotl - Rotates the stack to the top.
  * @stack: Double pointer to the top of the stack.
- * @line_number: Line number in the script file. (unused but included for consistency)
+ * @line_number: Line number in the script file.
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
