@@ -85,6 +85,7 @@ void execute_opcode(char *opcode, unsigned int line_number,
 		{"mod", mod},
 		{"mul", mul},
 		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 

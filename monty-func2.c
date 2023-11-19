@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * div - Divides the second top element of the stack by the top element.
+ * div_stack - Divides the second top element of the stack by the top element.
  * @stack: Double pointer to the top of the stack.
  * @line_number: Line number in the script file.
  */
@@ -99,4 +99,23 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 
 	printf("%c\n", (*stack)->n);
+}
+
+/**
+ * pstr - Prints the string starting at the top of the stack.
+ * @stack: Double pointer to the top of the stack.
+ * @line_number: Line number in the script file.
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current = *stack;
+
+	(void)line_number;
+
+	while (current != NULL && current->n > 0 && current->n <= 127)
+	{
+		printf("%c", current->n);
+		current = current->next;
+	}
+	printf("\n");
 }
