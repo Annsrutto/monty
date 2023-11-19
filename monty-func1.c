@@ -79,3 +79,29 @@ void sub(stack_t **stack, unsigned int line_number)
 	free(temp);
 }
 
+/**
+ * rotl - Rotates the stack to the top.
+ * @stack: Double pointer to the top of the stack.
+ * @line_number: Line number in the script file. (unused but included for consistency)
+ */
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *top, *bottom;
+
+	(void)line_number;
+
+	if (*stack && (*stack)->next)
+	{
+		top = *stack;
+		bottom = *stack;
+
+		while (bottom->next)
+			bottom = bottom->next;
+
+		*stack = top->next;
+		top->next->prev = NULL;
+		top->next = NULL;
+		bottom->next = top;
+		top->prev = bottom;
+	}
+}

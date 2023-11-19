@@ -86,6 +86,7 @@ void execute_opcode(char *opcode, unsigned int line_number,
 		{"mul", mul},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 
